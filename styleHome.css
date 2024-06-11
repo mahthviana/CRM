@@ -2,8 +2,26 @@
 
 body, h2, h3, p, section, div, header {
     padding: 0;
-    margin: 0;
+    margin: 0 0 0 2px;
     box-sizing: border-box;
+}
+
+body {
+    overflow-x: hidden;
+
+    background: #131318;
+
+    color: #FFF;
+    font-family: "Hanken Grotesk", sans-serif;
+}
+
+header {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    gap: 0 1px;
 }
 
 .title {
@@ -35,4 +53,186 @@ body, h2, h3, p, section, div, header {
 .bg-image {
     width: 375px;
     height: 200px;
+
+    z-index: 1;
+
+    background-position: center center;
+    background-size: cover;
+
+
 }
+
+.logo {
+    width: 74px;
+    height: 74px;
+
+    background-color: #000;
+    border-radius: 50%;
+    
+    fill: #000;
+    stroke-width: 2px;
+    stroke: #1C1D24;
+    
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+
+    z-index: 2;
+
+    position: relative;
+    left: 120px;
+    bottom: 40px;
+}
+
+section h2 {
+    width: 198px;
+    height: 62px;
+
+    color: #FFF;
+    font-size: 34px;
+    font-style: normal;
+    font-weight: 900;
+    line-height: 90%;
+
+    margin-top: -40px;
+}
+
+.header {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+section span {
+    width: 154px;
+    height: 26px;
+
+    color: #FFF;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 400px;
+    line-height: normal;
+
+    opacity: 0.6;
+}
+
+section h3 {
+    font-size: 14px;
+    font-weight: 500;
+    font-style: normal;
+    line-height: normal;
+}
+
+.help {
+    width: 29px;
+    height: 29px;
+    
+    fill: #6F5FE7;
+    stroke-width: 0.5px;
+    stroke: #6F5FE7;
+    
+    border-radius: 50%;
+    background-color: #6F5FE7;
+    border: none;
+
+    color: #FFF;
+    text-align: center;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    
+    cursor: pointer;
+
+    margin-top: 10px;
+}
+
+.standard {
+    display: flex;
+    flex-direction: column;
+
+}
+
+.standard h3 {
+    display: flex;
+    flex-direction: row;
+
+}
+
+.texto {
+    display: flex;
+    justify-content: space-between;
+
+    margin-bottom: 8px;
+
+}
+
+.scores {
+    margin-right: 104px;
+
+    color: #FFF;
+    text-align: right;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 900;
+    line-height: normal;
+    
+}
+
+.progress-bar {
+    width: 286px;
+    height: 10px;
+    
+    border-radius: 2px;
+    border: 0.5px solid #FFF;
+
+}
+
+section p {
+    color: #FFF;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+
+    opacity: 0.8;
+}
+
+.buttons-header {
+    display: flex;
+    column-gap: 16px;
+
+    margin-top: 24px;
+}
+
+.branch, .myCoupons {
+    width: 120px;
+    height: 37px;
+
+    text-align: center;
+    border: 1px solid #6F5FE7;
+    background: transparent;
+
+    border-radius: 20px;
+    
+    cursor: pointer;
+
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 900;
+    line-height: 90%;
+
+    font-family: "Hanken Grotesk", sans-serif;
+    color: #FFF;
+}
+
+.qrCode {
+    width: 37px;
+    height: 37px;
+    border-radius: 20px;
+    background: #6F5FE7;
+    border: none;
+    text-align: center;
+}
+
