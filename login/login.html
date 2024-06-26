@@ -60,7 +60,7 @@
 
                     </div>
 
-                    <p><a href="/esquecersenha/esquecer_senha.html" id="esqueci-senha">Esqueci minha senha</a></p>
+                    <p><a href="/Esquecer Senha/esquecer_senha.html" id="esqueci-senha">Esqueci minha senha</a></p>
 
                 </div>
     
@@ -78,37 +78,46 @@
         <div id="telacookies" style="display: none">
 
             <!-- essa tela aparece ao entrar no site, ela será hidden, com um tempo ela aparecerá, após isso, 
-                 o usuário vai selecionar a opção, e depois ela vai ficar hidden-->
+            o usuário vai selecionar a opção, e depois ela vai ficar hidden-->
             <div id="tela1-cookies">
                 <div id="infos">
                     <h3><strong>We use cookies</strong></h3>
-                    <h4>This website users cookies to enhance your browsing experience on our website, to show you personalized content 
+                    <h4>
+                        This website users cookies to enhance your browsing experience on our website, to show you personalized content 
                         and targeted ads, to analyze our website traffic, 
                         and to understand where our visitors are coming from. You can manage your preferences by clicking “Change Preference.”
                     </h4>
                 </div>
                 <div id="botoes-cookies">
-                    <div class="accept-fecha" id="aceitar-cookies">Accept All</div> 
-                    <a id="preferences-abre">CHANGE PREFERENCES</a>
+                    <div class="accept-fecha" id="aceitar-cookies">
+                        <button id="acceptAll">Accept All</button>
+                    </div> 
+                    <a href="#" id="preferences-abre">change preferences</a>
                 </div>
             </div>
         </div>
-            <div id="tela2-cookies" style="display: none">
+
+
+        <!-- TELA DOIS -->
+            <div id="tela2-cookies" style="display: none;">
                 <div id="top">
                     <h2><strong>Privacy Preferences</strong></h2>
-                    <button id="fechar"></button>
+                    <button id="fechar">accept all</button>
                 </div>
-        
-                <div class="accept-fecha" id="aceitar-preferencias">Accept All</div>
+
+                
         
                 <div class="container-cookies">
                     <div class="containercook-top">
                         <h3><strong>Necessary</strong></h3>
-                        <button class="rolagem"></button>
+                        <button class="rolagem"> 
+                            <img src="../images/Vector.svg" alt="">
+                        </button>
                     </div>
-                    <h3>Necessary cookies are required to help a website useable by enabling core functions and access to secure areas of the website. 
+                    <h4>
+                        Necessary cookies are required to help a website useable by enabling core functions and access to secure areas of the website. 
                         The website cannot function properly without these cookies and they are enabled by default and cannot be disabled.
-                    </h3>
+                    </h4>
                 </div>
         
                 <div class="container-cookies">
@@ -116,9 +125,9 @@
                         <h3><strong>Analytics</strong></h3>
                         <button class="rolagem"></button>
                     </div>
-                    <h3>Analytics cookies help website to understand how visitors interact through the website. 
+                    <h4>Analytics cookies help website to understand how visitors interact through the website. 
                         These cookies help to improve user experiences by collecting and reporting information.
-                    </h3> 
+                    </h4> 
                 </div>
         
                 <div class="container-cookies">
@@ -126,7 +135,7 @@
                         <h3><strong>Marketing</strong></h3>
                         <button class="rolagem"></button>
                     </div>
-                    <h3>Marketing cookies are used to track visitors across websites to display relevant advertisements for the individual user and thereby more valuable for publishers and third party advertisers.</h3>
+                    <h4>Marketing cookies are used to track visitors across websites to display relevant advertisements for the individual user and thereby more valuable for publishers and third party advertisers.</h4>
                 </div>
         
                 <button class="confirm-choices">Confirm my Choices</button>

@@ -1,44 +1,3 @@
-// // Criando objeto usuário
-// let primeiroNomeValor, ultimoNomeValor, emailValor, telefoneValor, senhaCadastroValor
-
-// function usuario(id, primeiroNome, ultimoNome, email, telefone, senhaCadastro) {
-
-
-//     this.id = contadorId
-
-//     this.primeiroNome = primeiroNomeValor
-
-//     this.ultimoNome = ultimoNomeValor
-
-//     this.email = emailValor
-
-//     this.telefone = telefoneValor
-
-//     this.senhaCadastro = senhaCadastroValor
-
-
-// }
-
-// -------------------------------------------------------------------------------
-// Criando contador de Id
-let contadorId
-function criarContadorId(){
-    if (localStorage.getItem('contadorId') === null) {
-
-        localStorage.setItem('contadorId', 1);
-    }
-    
-}
-
-function acrescentarContador() {
-    let contadorId = (localStorage.getItem('contadorId'))
-
-    contadorId++
-
-    localStorage.setItem('contadorId', contadorId)
-}
-
-
 
 // -----------------------------------------------------------------------------
 // botão enviar 
@@ -62,10 +21,16 @@ function adicionarCadastro() {
 
         cadastrarUsuario();
 
-        // Redireciona para a página de login após o cadastro
         window.location.href = "../login/login.html";
+    
+    
+    } else if (!emailExistente() || !telefoneExistente()){
 
-    } else if (emailExistente()) {
+        !emailExistente()
+        !telefoneExistente()
+
+
+    }else if (emailExistente()) {
 
         emailExistente();
 
@@ -85,20 +50,21 @@ function adicionarCadastro() {
 // --------------------------------------------------------------------------------------------------
 // Função Cadastrar usuário 
 
-let bancoDadosCadastro = []; // Inicializa como um array vazio
+let bancoDadosCadastro = [];
 
 function cadastrarUsuario() {
-    receberValores(); // Obtém os valores dos campos do formulário
+    receberValores(); 
 
-    // Obtém os dados do localStorage ou inicializa como um array vazio
+    
     bancoDadosCadastro = JSON.parse(localStorage.getItem('bancoDadosCadastro')) || [];
 
-    // Adiciona um novo usuário ao banco de dados
+
     bancoDadosCadastro.push({
-        primeiroNome: primeiroNomeValor,
-        ultimoNome: ultimoNomeValor,
-        email: emailValor,
-        senha: senhaCadastroValor
+        "primeiroNome": primeiroNomeValor,
+        "ultimoNome": ultimoNomeValor,
+        "telefone" : telefoneValor,
+        "email": emailValor,
+        "senha": senhaCadastroValor
     });
 
     // Salva o banco de dados atualizado de volta no localStorage
@@ -124,7 +90,7 @@ function receberValores() {
      email = document.getElementById("email")
      emailValor = email.value
 
-     telefone = document.getElementById("telefone").value;
+     telefone = document.getElementById("telefone");
      telefoneValor = telefone.value
 
      senhaCadastro = document.getElementById("senha")
@@ -135,7 +101,7 @@ function receberValores() {
 }
 
 // --------------------------------------------------------------------------------------
-// Função verificar senha está correta
+// Função verificar senha 
 
 function verificarSenha() {
 
@@ -166,55 +132,68 @@ function verificarSenha() {
 
     return !senhaCorreta;
 }
+
+
+
 // --------------------------------------------------------------
-// EMAIL EXISTENTE FUNÇÃO CERTO
+// EMAIL EXISTENTE FUNÇÃO 
+
 
 function emailExistente() {
     let bancoDadosCadastro = localStorage.getItem('bancoDadosCadastro');
+    let emailValor = document.getElementById("email").value.trim(); 
 
     if (bancoDadosCadastro) {
-
         bancoDadosCadastro = JSON.parse(bancoDadosCadastro);
 
         for (let i = 0; i < bancoDadosCadastro.length; i++) {
+            let emailCadastrado = bancoDadosCadastro[i].email;
 
-            if (email === bancoDadosCadastro[i].email) {
-
+            if (emailValor === emailCadastrado) {
                 console.log("Email já existente no banco");
-    
+
                 const erroEmail = document.createElement("p");
                 erroEmail.innerText = "Email já cadastrado!!!";
                 erroEmail.style.color = "red";
                 erroEmail.classList.add("erro-email");
-        
+
                 const emailLabel = document.getElementById("email").parentElement;
                 let erroExistente = emailLabel.querySelector(".erro-email");
-        
-                if (!erroExistente) {
 
+                if (!erroExistente) {
                     emailLabel.appendChild(erroEmail);
                 }
-    
-                return true;
+
+                return true; 
             }
         }
+
+      
+        const emailLabel = document.getElementById("email").parentElement;
+        let erroExistente = emailLabel.querySelector(".erro-email");
+        if (erroExistente) {
+            emailLabel.removeChild(erroExistente);
+        }
     }
-    return false; // Email não encontrado ou banco vazio
+
+    return false; 
 }
+
 
 // ------------------------------------------------------------------------------------------------------
 // Função Telefone Existente
-function telefoneExistente() {
 
+function telefoneExistente() {
     let bancoDadosCadastro = localStorage.getItem('bancoDadosCadastro');
+    let telefoneValor = document.getElementById("telefone").value.trim(); 
 
     if (bancoDadosCadastro) {
-
-        bancoDadosCadastro = JSON.parse(bancoDadosCadastro)
+        bancoDadosCadastro = JSON.parse(bancoDadosCadastro);
 
         for (let i = 0; i < bancoDadosCadastro.length; i++) {
-            
-            if (telefoneValor == bancoDadosCadastro[i].telefone) {
+            let telefoneCadastrado = bancoDadosCadastro[i].telefone;
+
+            if (telefoneValor === telefoneCadastrado) {
                 console.log("Telefone já existente no banco");
 
                 const erroTelefone = document.createElement("p");
@@ -226,16 +205,20 @@ function telefoneExistente() {
                 let erroExistente = telefoneLabel.querySelector(".erro-telefone");
 
                 if (!erroExistente) {
-
                     telefoneLabel.appendChild(erroTelefone);
                 }
 
-                return true
-
+                return true; 
             }
         }
-    return false
+
+      
+        const telefoneLabel = document.getElementById("telefone").parentElement;
+        let erroExistente = telefoneLabel.querySelector(".erro-telefone");
+        if (erroExistente) {
+            telefoneLabel.removeChild(erroExistente);
+        }
     }
-    
-        
-}
+
+        return false; 
+    }

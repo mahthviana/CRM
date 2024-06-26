@@ -8,8 +8,6 @@
     --hover-bt: #564ab8;
 }
 
-
-
 *{
     padding: 0;
     margin: 0;
@@ -24,46 +22,12 @@ body{
     
 
 }
-/* .logo {
-    width: 74px;
-    height: 74px;
-
-    background-color: #000;
-    border-radius: 50%;
-    
-    fill: #000;
-    stroke-width: 2px;
-    stroke: #1C1D24;
-    
-    display: flex;
-    justify-content: end;
-    align-items: flex-end;
-    flex-direction: column;
-
-    z-index: 2;
-
-    position: relative;
-    left: 120px;
-    bottom: 40px;
-} */
-
-#logomarca {
+#logomarca{
     right: 24px;
     position: absolute;
     top: 26%;
 
-    width: 74px;
-    height: 74px;
-
-    background-color: #000;
-    border-radius: 50%;
-    border: 5px solid red;
-
-    padding: 8px;
-
 }
-
-
 
 main{
     width: 375px;
@@ -157,8 +121,6 @@ h4{
     width: 50%;
     height: 6px;
 }
-
-
 
 button{
     height: 50px;
